@@ -1,50 +1,68 @@
-# Welcome to your Expo app 👋
+# StudyJam - React Native + Expo + Firebase Auth
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A minimal authentication app built with React Native, Expo Router, and Firebase Authentication.
 
-## Get started
+## Features
 
-1. Install dependencies
+- ✅ Firebase Email/Password Authentication
+- ✅ Expo Router for navigation
+- ✅ Login Screen
+- ✅ Signup Screen  
+- ✅ Protected Home/Landing Screen
+- ✅ Auto-redirect based on auth state
+- ✅ Logout functionality
 
+## Setup
+
+1. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+2. Start the app:
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Run on your preferred platform:
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+   - Scan QR code with Expo Go app on your phone
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## App Structure
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+```
+app/
+├── layout.js      # Root layout with auth state management
+├── index.js       # Home/Landing screen (protected)
+├── login.js       # Login screen
+└── signup.js      # Signup screen
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+src/
+└── firebaseConfig.js  # Firebase configuration & auth helpers
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## How It Works
 
-## Learn more
+1. **Initial Load**: The app checks if a user is logged in
+2. **Not Logged In**: Redirects to `/login`
+3. **Logged In**: Shows the home screen at `/`
+4. **After Login/Signup**: Automatically redirects to home
+5. **Logout**: Returns to login screen
 
-To learn more about developing your project with Expo, look at the following resources:
+## Firebase Configuration
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Firebase is already configured in `src/firebaseConfig.js` with your project credentials. The app uses:
+- Firebase Authentication (Email/Password)
+- Helper functions: `signup()`, `login()`, `logout()`, `onAuthState()`
 
-## Join the community
+## Testing
 
-Join our community of developers creating universal apps.
+1. Create an account on the signup screen
+2. You'll be automatically logged in and redirected to home
+3. Logout and try logging back in
+4. Close and reopen the app - you should stay logged in
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Next Steps
+
+This is a minimal auth setup. You can now build your full app features on top of this foundation!
