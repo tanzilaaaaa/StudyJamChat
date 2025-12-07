@@ -1,6 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as DocumentPicker from "expo-document-picker";
+import * as FileSystem from "expo-file-system/legacy";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import * as Sharing from "expo-sharing";
 import { useEffect, useState } from "react";
 import {
     Alert,
@@ -447,7 +449,7 @@ export default function CourseDetail() {
           
           // Read file as base64
           const base64 = await FileSystem.readAsStringAsync(file.uri, {
-            encoding: FileSystem.EncodingType.Base64,
+            encoding: "base64",
           });
 
           const updatedAssignments = assignments.map(a =>
@@ -512,7 +514,7 @@ export default function CourseDetail() {
         const fileUri = `${FileSystem.cacheDirectory}${fileName}`;
         
         await FileSystem.writeAsStringAsync(fileUri, fileInfo.base64, {
-          encoding: FileSystem.EncodingType.Base64,
+          encoding: "base64",
         });
 
         const canShare = await Sharing.isAvailableAsync();

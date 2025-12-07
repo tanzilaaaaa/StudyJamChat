@@ -2,6 +2,8 @@
 
 # dependencies
 node_modules/
+.pnp
+.pnp.js
 
 # Expo
 .expo/
@@ -25,16 +27,24 @@ expo-env.d.ts
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+*.log
 
 # macOS
 .DS_Store
 *.pem
+.AppleDouble
+.LSOverride
 
 # local env files
+.env
 .env*.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # backend data
 backend/rooms-data.json
+backend/node_modules/
 
 # typescript
 *.tsbuildinfo
@@ -44,3 +54,42 @@ app-example
 # generated native folders
 /ios
 /android
+
+# Build outputs
+*.apk
+*.aab
+*.ipa
+build/
+*.app.dSYM.zip
+*.app.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Documentation (optional - remove if you want to keep these)
+AUTH_FLOW_COMPLETE.md
+FIREBASE_AUTH_FIXED.md
+PROJECT_SETUP.md
+ROLE_BASED_AUTH_GUIDE.md
+WEEK2_COMPLETE.md
+WEEK2_IMPLEMENTATION.md
+
+# Nested git repos (if any)
+StudyChat/
+StudyJam-Chat/

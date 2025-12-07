@@ -1,12 +1,19 @@
 import { Platform } from 'react-native';
 import { io } from 'socket.io-client';
 
-// Use your computer's IP address for iOS simulator and physical devices
-// For web, use localhost
+// Backend server URL
+// IMPORTANT: Replace this with your deployed backend URL after deployment
+// For development: use localhost (web) or your computer's IP (mobile)
+// For production: use your deployed backend URL (Railway, Render, Heroku, etc.)
 const isWeb = typeof window !== 'undefined' && window.document;
-const SOCKET_URL = isWeb
-  ? 'http://localhost:4000' 
-  : 'http://10.20.16.208:4000';
+
+// TODO: Replace 'YOUR_BACKEND_URL' with your actual deployed backend URL
+// Your Render service name: StudyJamChat
+const PRODUCTION_URL = 'https://studyjamchat.onrender.com'; // Your actual Render URL
+
+const SOCKET_URL = PRODUCTION_URL !== 'https://studyjamchat.onrender.com' 
+  ? PRODUCTION_URL 
+  : (isWeb ? 'http://localhost:4000' : 'http://192.168.0.106:4000');
 
 console.log('Platform.OS:', Platform.OS, 'isWeb:', isWeb, 'SOCKET_URL:', SOCKET_URL);
 

@@ -1,4 +1,7 @@
+import * as DocumentPicker from "expo-document-picker";
+import * as FileSystem from "expo-file-system/legacy";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import * as Sharing from "expo-sharing";
 import { useEffect, useRef, useState } from "react";
 import {
   Alert,
@@ -96,6 +99,27 @@ export default function ChatRoom() {
     socketService.onMessagesDeleted((msgIds) => {
       console.log('Messages deleted event received:', msgIds.length);
       setMessages((prev) => prev.filter((m) => !msgIds.includes(m.id)));
+      setPinnedMessages((prev) => prev.filter((m) => !msgIds.includes(m.id)));
+    });
+
+    // Listen for pinned messages
+    socketService.onPinnedMessages((pins) => {
+      console.log('Received pinned messages:', pins.length);
+      setPinnedMessages(pins);
+    });
+
+    socketService.onMessagePinned((msg) => {
+      console.log('Message pinned:', msg.id);
+      setPinnedMessages((prev) => [...prev, msg]);
+    });
+
+    socketService.onMessageUnpinned((msgId) => {
+      console.log('Message unpinned event received:', msgId);
+      setPinnedMessages((prev) => {
+        const updated = prev.filter((m) => m.id !== msgId);
+        console.log('Updated pinned messages:', updated.length);
+        return updated;
+      });
     });
 
     // Cleanup
@@ -216,7 +240,7 @@ export default function ChatRoom() {
           
           // Read file as base64
           const base64 = await FileSystem.readAsStringAsync(file.uri, {
-            encoding: FileSystem.EncodingType.Base64,
+            encoding: "base64",
           });
 
           const currentUserId = userId || user?.uid;
@@ -290,7 +314,7 @@ export default function ChatRoom() {
         const fileUri = `${FileSystem.cacheDirectory}${fileName}`;
         
         await FileSystem.writeAsStringAsync(fileUri, fileInfo.base64, {
-          encoding: FileSystem.EncodingType.Base64,
+          encoding: "base64",
         });
 
         const canShare = await Sharing.isAvailableAsync();
@@ -315,9 +339,61 @@ export default function ChatRoom() {
     }
   };
 
+  const handlePin = (messageId) => {
+    // Check if message is already pinned
+    const isPinned = pinnedMessages.some(msg => msg.id === messageId);
+    
+    if (isPinned) {
+      // Already pinned, show message
+      if (Platform.OS === 'web') {
+        alert('This message is already pinned. Go to Pinboard to unpin it.');
+      } else {
+        Alert.alert('Already Pinned', 'This message is already pinned. Go to Pinboard to unpin it.');
+      }
+    } else {
+      // Pin the message
+      socketService.pinMessage(roomId, messageId);
+      if (Platform.OS === 'web') {
+        alert('Message pinned!');
+      }
+    }
+  };
+
   const handleLongPress = (messageId) => {
     if (selectionMode) {
       toggleMessageSelection(messageId);
+      return;
+    }
+
+    // On web, use the pin button instead of long press
+    if (Platform.OS === 'web') {
+      return;
+    }
+
+    // Mobile: Show pin dialog
+    const isPinned = pinnedMessages.some(msg => msg.id === messageId);
+    
+    if (isPinned) {
+      Alert.alert(
+        "Already Pinned",
+        "This message is already pinned. Go to Pinboard to unpin it.",
+        [{ text: "OK" }]
+      );
+    } else {
+      Alert.alert(
+        "Pin Message",
+        "Pin this message to the Pinboard?",
+        [
+          {
+            text: "Pin",
+            onPress: () => handlePin(messageId),
+          },
+          {
+            text: "Cancel",
+            style: "cancel",
+          },
+        ]
+      );
     }
   };
 
@@ -424,6 +500,16 @@ export default function ChatRoom() {
             {time}
           </Text>
         </TouchableOpacity>
+        {Platform.OS === 'web' && !selectionMode && (
+          <TouchableOpacity
+            onPress={() => handlePin(item.id)}
+            style={styles.pinButtonWeb}
+          >
+            <Text style={styles.pinIcon}>
+              {pinnedMessages.some(msg => msg.id === item.id) ? '✓' : '📌'}
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
     );
   };
