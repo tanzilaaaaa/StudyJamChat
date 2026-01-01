@@ -625,9 +625,24 @@ export default function CourseDetail() {
         <View style={styles.infoCard}>
           <View style={styles.infoHeader}>
             <Text style={styles.infoTitle}>Course Information</Text>
+            {userRole === "admin" && !isEditingInfo && (
+              <TouchableOpacity onPress={() => setIsEditingInfo(true)}>
+                <Text style={styles.editButton}>Edit</Text>
+              </TouchableOpacity>
+            )}
+            {userRole === "admin" && isEditingInfo && (
+              <View style={styles.editActions}>
+                <TouchableOpacity onPress={() => setIsEditingInfo(false)}>
+                  <Text style={styles.cancelButton}>Cancel</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handleSaveCourseInfo}>
+                  <Text style={styles.saveButton}>Save</Text>
+                </TouchableOpacity>
+              </View>
+            )}
           </View>
 
-          {false ? (
+          {isEditingInfo ? (
             <>
               <View style={styles.infoRow}>
                 <Text style={styles.infoLabel}>Course Name:</Text>
