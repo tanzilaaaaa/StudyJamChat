@@ -13,7 +13,7 @@ const PRODUCTION_URL = 'https://studyjamchat.onrender.com'; // Your actual Rende
 
 const SOCKET_URL = PRODUCTION_URL !== 'https://studyjamchat.onrender.com' 
   ? PRODUCTION_URL 
-  : (isWeb ? 'http://localhost:4000' : 'http://192.168.0.106:4000');
+  : (isWeb ? 'http://localhost:4000' : 'http://192.168.0.123:4000');
 
 console.log('Platform.OS:', Platform.OS, 'isWeb:', isWeb, 'SOCKET_URL:', SOCKET_URL);
 
