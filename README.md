@@ -48,7 +48,6 @@ Backend              → Firebase, Nodejs, socket.io
 Realtime             → Firestore listeners, socket.io
 Language             → JavaScript, Typescript
 Database and Auth    → Firebase Authentication,  Firebase Firestore
-
 ```
 
 ---
@@ -68,9 +67,7 @@ StudyJamChat/
 ├── eas.json        # Expo build configuration
 ├── package.json    # Dependencies
 └── README.md       # Project documentation
-
 ```
-
 
 ---
 
@@ -83,7 +80,6 @@ Prerequisites
 
 ```
 npm install -g expo-cli
-
 ```
 Installation
 
@@ -92,14 +88,12 @@ Installation
 ```
 git clone https://github.com/tanzilaaaa/Studyjam.git
 cd Studyjam
-
 ```
 
 2️⃣ Install dependencies
 
 ```
 npm install
-
 ```
 
 3️⃣ Add Firebase environment variables
@@ -113,14 +107,12 @@ EXPO_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
 EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
 EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 EXPO_PUBLIC_FIREBASE_APP_ID=your_app_id
-
 ```
 
 4️⃣ Start the app
 
 ```
 npx expo start
-
 ```
 
 You can then:
@@ -129,6 +121,7 @@ You can then:
 	•	Scan with Expo Go
   
 ---
+
 🔥 Firebase Data Design
 
 Collections Used
@@ -139,9 +132,9 @@ courses                 → study courses
 courses/{id}/messages   → real-time chat messages
 announcements           → admin announcements
 joinRequests            → pending course requests
-
 ```
 ---
+
 📱 Scripts
 
 ```
@@ -150,16 +143,13 @@ npm run ios        # Run on iOS
 npm run ios        # Run on iOS
 npm run web        # Run on web
 npm run build      # Export for web
-
 ```
 ---
 
 🔐 Security Notes :
 
 	•	Firebase keys are stored using Expo public env variables
-	
 	•	No admin actions are allowed without role validation
-	
 	•	Firestore rules restrict access based on authentication
 
 ---
@@ -171,11 +161,8 @@ This project is beginner-friendly.
 Steps:
 
 	1.	Fork the repository
-	
 	2.	Create a new branch
-	
 	3.	Make your changes
-	
 	4.	Open a Pull Request
 
 ---
