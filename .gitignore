@@ -48,3 +48,25 @@ backend/yarn-error.log*
 # Temporary files
 *.tmp
 *.temp
+
+# dependencies
+node_modules/
+
+# build output
+dist/
+build/
+
+# env & secrets
+.env
+firebaseConfig.js
+
+# expo
+.expo/
+
+# system
+.DS_Store
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
