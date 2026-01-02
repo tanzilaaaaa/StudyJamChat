@@ -57,4 +57,5 @@ backend/rooms-data.json
 # Temporary files
 # =====================
 *.tmp
-*.temp
+*.tempCOMPLETE_PROJECT_BUNDLE.md
+PROJECT_BUNDLE.md
