@@ -1,68 +1,89 @@
-# StudyJam - React Native + Expo + Firebase Auth
+# StudyJam 📚💬
 
-A minimal authentication app built with React Native, Expo Router, and Firebase Authentication.
+StudyJam is a student collaboration platform built to make academic communication simple, organized, and real-time.  
+It brings together chat, notes, and course management into one place so students can focus more on learning and less on juggling tools.
 
-## Features
+This project is being developed with scalability and real-time interaction in mind, using modern web and mobile technologies.
 
-- ✅ Firebase Email/Password Authentication
-- ✅ Expo Router for navigation
-- ✅ Login Screen
-- ✅ Signup Screen  
-- ✅ Protected Home/Landing Screen
-- ✅ Auto-redirect based on auth state
-- ✅ Logout functionality
+---
 
-## Setup
+## 🚀 What StudyJam Does
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+- Enables students to communicate through real-time chat
+- Supports role-based access for students and admins
+- Allows sharing of notes, course materials, and assignments
+- Provides a structured space for academic collaboration
+- Works across Android, iOS, and Web
 
-2. Start the app:
-   ```bash
-   npx expo start
-   ```
+---
 
-3. Run on your preferred platform:
-   - Press `i` for iOS simulator
-   - Press `a` for Android emulator
-   - Scan QR code with Expo Go app on your phone
+## 🛠 Tech Stack
 
-## App Structure
+**Frontend**
+- React Native
+- Expo
+- TypeScript
 
-```
-app/
-├── layout.js      # Root layout with auth state management
-├── index.js       # Home/Landing screen (protected)
-├── login.js       # Login screen
-└── signup.js      # Signup screen
+**Backend**
+- Node.js
+- Express
+- Socket.io
 
-src/
-└── firebaseConfig.js  # Firebase configuration & auth helpers
-```
+**Database & Auth**
+- Firebase Authentication
+- Firebase Firestore
+- AsyncStorage
 
-## How It Works
+---
 
-1. **Initial Load**: The app checks if a user is logged in
-2. **Not Logged In**: Redirects to `/login`
-3. **Logged In**: Shows the home screen at `/`
-4. **After Login/Signup**: Automatically redirects to home
-5. **Logout**: Returns to login screen
+## ✨ Key Features
 
-## Firebase Configuration
+- Role-based authentication (Student / Admin)
+- Real-time messaging using Socket.io
+- Notes system with search functionality
+- Course and assignment management
+- Message pinning and deletion
+- Cross-platform support
 
-Firebase is already configured in `src/firebaseConfig.js` with your project credentials. The app uses:
-- Firebase Authentication (Email/Password)
-- Helper functions: `signup()`, `login()`, `logout()`, `onAuthState()`
+---
 
-## Testing
+## 📂 Project Structure
 
-1. Create an account on the signup screen
-2. You'll be automatically logged in and redirected to home
-3. Logout and try logging back in
-4. Close and reopen the app - you should stay logged in
+StudyJam/
+├── app/            # Screens and navigation
+├── components/     # Reusable UI components
+├── src/            # Core logic, services, hooks
+├── backend/        # Node.js + Socket.io server
+├── assets/         # Images and icons
+├── docs/           # Project documentation
 
-## Next Steps
 
-This is a minimal auth setup. You can now build your full app features on top of this foundation!
+
+---
+
+## 🧪 Project Status
+
+The project is under **active development**.  
+Features are being added incrementally, and the codebase is structured to support future scaling and open-source contributions.
+
+---
+
+## 📌 Goals
+
+- Build a clean and maintainable codebase
+- Follow best practices for real-time systems
+- Prepare the project for open-source contribution
+- Make the platform genuinely useful for students
+
+---
+
+## 🤝 Contributions
+
+Contributions and feedback will be welcome once the core features are stable.  
+Documentation and contribution guidelines will be added soon.
+
+---
+
+## 📄 License
+
+This project is currently for educational and learning purposes.
