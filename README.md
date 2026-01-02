@@ -68,6 +68,7 @@ StudyJamChat/
 ├── eas.json        # Expo build configuration
 ├── package.json    # Dependencies
 └── README.md       # Project documentation
+
 ```
 
 
@@ -97,7 +98,6 @@ cd Studyjam
 2️⃣ Install dependencies
 
 ```
-
 npm install
 
 ```
@@ -105,8 +105,8 @@ npm install
 3️⃣ Add Firebase environment variables
 
 Create a .env file in the root folder:
-```
 
+```
 EXPO_PUBLIC_FIREBASE_API_KEY=your_api_key
 EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
 EXPO_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
@@ -119,7 +119,6 @@ EXPO_PUBLIC_FIREBASE_APP_ID=your_app_id
 4️⃣ Start the app
 
 ```
-
 npx expo start
 
 ```
@@ -151,12 +150,16 @@ npm run ios        # Run on iOS
 npm run ios        # Run on iOS
 npm run web        # Run on web
 npm run build      # Export for web
+
 ```
 ---
 
-🔐 Security Notes
+🔐 Security Notes :
+
 	•	Firebase keys are stored using Expo public env variables
+	
 	•	No admin actions are allowed without role validation
+	
 	•	Firestore rules restrict access based on authentication
 
 ---
@@ -166,9 +169,13 @@ npm run build      # Export for web
 This project is beginner-friendly.
 
 Steps:
+
 	1.	Fork the repository
+	
 	2.	Create a new branch
+	
 	3.	Make your changes
+	
 	4.	Open a Pull Request
 
 ---
