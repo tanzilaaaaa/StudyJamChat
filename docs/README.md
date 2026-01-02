@@ -1,187 +1,168 @@
-# StudyJam - Complete Documentation
+StudyJam 📚
 
-## 📚 Table of Contents
+![React Native](https://img.shields.io/badge/React%20Native-Expo-blue?logo=react)
+![JavaScript](https://img.shields.io/badge/JavaScript-Main%20Language-yellow?logo=javascript)
+![TypeScript](https://img.shields.io/badge/TypeScript-Minimal%20Usage-blue?logo=typescript)
+![Expo](https://img.shields.io/badge/Expo-24-black?logo=expo)
+![Firebase](https://img.shields.io/badge/Firebase-Auth%20%7C%20Firestore%20%7C%20Storage-orange?logo=firebase)
 
-1. [Project Overview](./01-PROJECT-OVERVIEW.md)
-2. [Getting Started](./02-GETTING-STARTED.md)
-3. [Architecture](./03-ARCHITECTURE.md)
-4. [Authentication Flow](./04-AUTHENTICATION.md)
-5. [Features Guide](./05-FEATURES.md)
-6. [Code Structure](./06-CODE-STRUCTURE.md)
-7. [Backend API](./07-BACKEND-API.md)
-8. [Deployment Guide](./08-DEPLOYMENT.md)
-9. [Troubleshooting](./09-TROUBLESHOOTING.md)
-10. [Code Walkthrough](./10-CODE-WALKTHROUGH.md) ⭐ **NEW!**
+
+A collaborative study group mobile app built with Expo (React Native) and Firebase, designed to help students create courses, join study groups, chat in real time, and stay updated with announcements  all in one place.
+
+Built as part of a hands-on learning initiative with a focus on scalability, real time communication, and clean architecture.
+---
+
+✨ Key Highlights
+	•	 Secure authentication with Email/Password & Google
+	•	 Real-time group chat using Firestore listeners
+	•	 Role-based access (Students & Admins)
+	•	 Course announcements & notifications
+	•	 Cross-platform support (Android, iOS, Web)
 
 ---
 
-## 🎯 Quick Links
+🚀 Features
 
-- **Live Backend**: https://studyjamchat.onrender.com
-- **GitHub Repository**: https://github.com/tanzilaaaaa/StudyJamChat
-- **Tech Stack**: React Native, Expo, Firebase, Socket.io, Node.js
+ For Students
+	•	Sign up & log in using Email/Google
+	•	Browse and join available courses
+	•	Participate in real-time course chats
+	•	View announcements posted by admins
+	•	Manage personal profile
+	•	Receive notifications
+
+ For Admins
+	•	Admin dashboard with overview
+	•	Create & manage courses
+	•	Approve / reject join requests
+	•	Post announcements
+	•	Manage users inside courses
 
 ---
 
-## 📱 What is StudyJam?
+🧰 Tech Stack
 
-StudyJam is a comprehensive student collaboration platform that combines:
-- **Role-based authentication** (Students & Admins)
-- **Real-time chat** with file sharing and message pinning
-- **Course management** with materials, assignments, and grades
-- **Study groups** for collaborative learning
-- **Notes system** for personal organization
-- **Profile management** with statistics tracking
-
----
-
-## 🚀 Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/tanzilaaaaa/StudyJamChat.git
-cd StudyJamChat
-
-# Install dependencies
-npm install
-
-# Start the app
-npx expo start
-
-# Start backend server
-cd backend
-npm install
-npm run dev
+```
+Frontend             → React Native (Expo, Expo Router)
+Backend              → Firebase, Nodejs, socket.io
+Realtime             → Firestore listeners, socket.io
+Language             → JavaScript, Typescript
+Database and Auth    → Firebase Authentication,  Firebase Firestore
 ```
 
 ---
 
-## 📖 Documentation Structure
+## 📁 Project Structure
 
-Each document covers a specific aspect of the project:
-
-### 1. Project Overview
-- What StudyJam does
-- Key features
-- Technology stack
-- Project goals
-
-### 2. Getting Started
-- Prerequisites
-- Installation steps
-- Running the app
-- Environment setup
-
-### 3. Architecture
-- System design
-- Component hierarchy
-- Data flow
-- State management
-
-### 4. Authentication Flow
-- User roles (Student/Admin)
-- Login/Signup process
-- Firebase integration
-- Role-based routing
-
-### 5. Features Guide
-- Dashboard
-- Chat system
-- Course management
-- Notes
-- Profile
-
-### 6. Code Structure
-- File organization
-- Key components
-- Utilities
-- Styling
-
-### 7. Backend API
-- Socket.io events
-- REST endpoints
-- Data persistence
-- Real-time communication
-
-### 8. Deployment Guide
-- Building APK
-- Backend deployment
-- Environment variables
-- Production setup
-
-### 9. Troubleshooting
-- Common issues
-- Solutions
-- FAQ
-- Debug tips
-
-### 10. Code Walkthrough ⭐ **NEW!**
-- Understanding the codebase
-- File-by-file explanation
-- How everything connects
-- Key programming concepts
-- Data flow diagrams
+```
+StudyJamChat/
+├── app/            # App screens and routing
+├── components/     # Reusable UI components
+├── src/            # Core logic, services, utilities
+├── backend/        # Node.js + Socket.io server
+├── assets/         # Images and icons
+├── docs/           # Documentation
+├── android/        # Native Android configuration
+├── app.json        # Expo configuration
+├── eas.json        # Expo build configuration
+├── package.json    # Dependencies
+└── README.md       # Project documentation
+```
 
 ---
 
-## 👥 User Roles
+🚀 Getting Started
 
-### Student
-- View courses
-- Join study groups
-- Send messages in chat
-- Create and manage notes
-- View grades and assignments
+Prerequisites
+	•	Node.js 
+	•	npm 
+	•	Expo CLI.
 
-### Admin
-- All student features
-- Add/edit/delete courses
-- Manage users
-- View analytics
-- Full course control
+```
+npm install -g expo-cli
+```
+Installation
+
+1️⃣ Clone the repository
+
+```
+git clone https://github.com/tanzilaaaa/Studyjam.git
+cd Studyjam
+```
+
+2️⃣ Install dependencies
+
+```
+npm install
+```
+
+3️⃣ Add Firebase environment variables
+
+Create a .env file in the root folder:
+
+```
+EXPO_PUBLIC_FIREBASE_API_KEY=your_api_key
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+EXPO_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+EXPO_PUBLIC_FIREBASE_APP_ID=your_app_id
+```
+
+4️⃣ Start the app
+
+```
+npx expo start
+```
+
+You can then:
+	•	Open on web
+	•	Run on Android/iOS
+	•	Scan with Expo Go
+  
+---
+
+🔥 Firebase Data Design
+
+Collections Used
+
+```
+users                   → student & admin profiles
+courses                 → study courses
+courses/{id}/messages   → real-time chat messages
+announcements           → admin announcements
+joinRequests            → pending course requests
+```
+---
+
+📱 Scripts
+
+```
+npm start          # Start Expo dev server
+npm run ios        # Run on iOS
+npm run ios        # Run on iOS
+npm run web        # Run on web
+npm run build      # Export for web
+```
+---
+
+🔐 Security Notes :
+
+	•	Firebase keys are stored using Expo public env variables
+	•	No admin actions are allowed without role validation
+	•	Firestore rules restrict access based on authentication
 
 ---
 
-## 🛠️ Tech Stack
+🤝 Contributing
 
-**Frontend:**
-- React Native (0.81.5)
-- Expo (54.0.23)
-- Expo Router (6.0.14)
-- Socket.io Client (4.8.1)
+This project is beginner-friendly.
 
-**Backend:**
-- Node.js (22.16.0)
-- Express (4.18.2)
-- Socket.io (4.6.1)
-- CORS (2.8.5)
+Steps:
 
-**Database & Auth:**
-- Firebase Authentication
-- Firebase Firestore
-- AsyncStorage (local data)
-
-**Deployment:**
-- Render (Backend)
-- EAS Build (APK)
+	1.	Fork the repository
+	2.	Create a new branch
+	3.	Make your changes
+	4.	Open a Pull Request
 
 ---
-
-## 📞 Support
-
-For questions or issues:
-1. Check the [Troubleshooting Guide](./09-TROUBLESHOOTING.md)
-2. Review the [FAQ](./09-TROUBLESHOOTING.md#faq)
-3. Open an issue on GitHub
-
----
-
-## 📄 License
-
-MIT License - See LICENSE file for details
-
----
-
-**Last Updated**: December 2024
-**Version**: 1.0.0
-**Author**: Tanzila Tahreem
