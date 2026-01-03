@@ -24,6 +24,7 @@ Built as part of a hands-on learning initiative with a focus on scalability, rea
 🚀 Features
 
  For Students
+ 
 	•	Sign up & log in using Email/Google
 	•	Browse and join available courses
 	•	Participate in real-time course chats
@@ -32,6 +33,7 @@ Built as part of a hands-on learning initiative with a focus on scalability, rea
 	•	Receive notifications
 
  For Admins
+ 
 	•	Admin dashboard with overview
 	•	Create & manage courses
 	•	Approve / reject join requests
