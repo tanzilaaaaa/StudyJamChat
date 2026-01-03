@@ -3,7 +3,7 @@ StudyJam 📚
 ![React Native](https://img.shields.io/badge/React%20Native-Expo-blue?logo=react)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Main%20Language-yellow?logo=javascript)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Minimal%20Usage-blue?logo=typescript)
-![Expo](https://img.shields.io/badge/Expo-24-black?logo=expo)
+![Expo](https://img.shields.io/badge/Expo-54-black?logo=expo)
 ![Firebase](https://img.shields.io/badge/Firebase-Auth%20%7C%20Firestore%20%7C%20Storage-orange?logo=firebase)
 
 
@@ -24,7 +24,6 @@ Built as part of a hands-on learning initiative with a focus on scalability, rea
 🚀 Features
 
  For Students
- 
 	•	Sign up & log in using Email/Google
 	•	Browse and join available courses
 	•	Participate in real-time course chats
@@ -33,7 +32,6 @@ Built as part of a hands-on learning initiative with a focus on scalability, rea
 	•	Receive notifications
 
  For Admins
- 
 	•	Admin dashboard with overview
 	•	Create & manage courses
 	•	Approve / reject join requests
@@ -149,7 +147,6 @@ npm run build      # Export for web
 ---
 
 🔐 Security Notes :
-
 	•	Firebase keys are stored using Expo public env variables
 	•	No admin actions are allowed without role validation
 	•	Firestore rules restrict access based on authentication
@@ -161,7 +158,6 @@ npm run build      # Export for web
 This project is beginner-friendly.
 
 Steps:
-
 	1.	Fork the repository
 	2.	Create a new branch
 	3.	Make your changes
