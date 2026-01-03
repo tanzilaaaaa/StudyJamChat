@@ -13,30 +13,30 @@ Built as part of a hands-on learning initiative with a focus on scalability, rea
 ---
 
 ✨ Key Highlights
-	•	 Secure authentication with Email/Password & Google
-	•	 Real-time group chat using Firestore listeners
-	•	 Role-based access (Students & Admins)
-	•	 Course announcements & notifications
-	•	 Cross-platform support (Android, iOS, Web)
+	-	 Secure authentication with Email/Password & Google
+	-	 Real-time group chat using Firestore listeners
+	-	 Role-based access (Students & Admins)
+	-	 Course announcements & notifications
+	-	 Cross-platform support (Android, iOS, Web)
 
 ---
 
 🚀 Features
 
  For Students
-	•	Sign up & log in using Email/Google
-	•	Browse and join available courses
-	•	Participate in real-time course chats
-	•	View announcements posted by admins
-	•	Manage personal profile
-	•	Receive notifications
+	-	Sign up & log in using Email/Google
+	-	Browse and join available courses
+	-	Participate in real-time course chats
+	-   View announcements posted by admins
+	-	Manage personal profile
+	-	Receive notifications
 
  For Admins
-	•	Admin dashboard with overview
-	•	Create & manage courses
-	•	Approve / reject join requests
-	•	Post announcements
-	•	Manage users inside courses
+    -   Admin dashboard with overview
+	-   Create & manage courses
+	-	Approve / reject join requests
+	-	Post announcements
+	-	Manage users inside courses
 
 ---
 
@@ -74,9 +74,9 @@ StudyJamChat/
 🚀 Getting Started
 
 Prerequisites
-	•	Node.js 
-	•	npm 
-	•	Expo CLI.
+	-	Node.js 
+	-	npm 
+	-	Expo CLI.
 
 ```
 npm install -g expo-cli
@@ -116,9 +116,9 @@ npx expo start
 ```
 
 You can then:
-	•	Open on web
-	•	Run on Android/iOS
-	•	Scan with Expo Go
+	-	Open on web
+	-	Run on Android/iOS
+	-	Scan with Expo Go
   
 ---
 
@@ -147,9 +147,9 @@ npm run build      # Export for web
 ---
 
 🔐 Security Notes :
-	•	Firebase keys are stored using Expo public env variables
-	•	No admin actions are allowed without role validation
-	•	Firestore rules restrict access based on authentication
+	-	Firebase keys are stored using Expo public env variables
+	-	No admin actions are allowed without role validation
+	-	Firestore rules restrict access based on authentication
 
 ---
 
@@ -158,9 +158,9 @@ npm run build      # Export for web
 This project is beginner-friendly.
 
 Steps:
-	1.	Fork the repository
-	2.	Create a new branch
-	3.	Make your changes
-	4.	Open a Pull Request
+	-	Fork the repository
+	-   Create a new branch
+	-	Make your changes
+	-	Open a Pull Request
 
 ---
