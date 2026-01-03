@@ -12,33 +12,39 @@ A collaborative study group mobile app built with Expo (React Native) and Fireba
 Built as part of a hands-on learning initiative with a focus on scalability, real time communication, and clean architecture.
 ---
 
-✨ Key Highlights
-	-	 Secure authentication with Email/Password & Google
-	-	 Real-time group chat using Firestore listeners
-	-	 Role-based access (Students & Admins)
-	-	 Course announcements & notifications
-	-	 Cross-platform support (Android, iOS, Web)
+<h2>✨ Key Highlights</h2>
+<ul>
+  <li>Secure authentication with Email/Password & Google</li>
+  <li>Real-time group chat using Firestore listeners</li>
+  <li>Role-based access (Students & Admins)</li>
+  <li>Course announcements & notifications</li>
+  <li>Cross-platform support (Android, iOS, Web)</li>
+</ul>
 
----
+<hr />
 
-🚀 Features
 
- For Students
-	-	Sign up & log in using Email/Google
-	-	Browse and join available courses
-	-	Participate in real-time course chats
-	-   View announcements posted by admins
-	-	Manage personal profile
-	-	Receive notifications
 
- For Admins
-    -   Admin dashboard with overview
-	-   Create & manage courses
-	-	Approve / reject join requests
-	-	Post announcements
-	-	Manage users inside courses
+<h3>👨‍🎓 For Students</h3>
+<ul>
+  <li>Sign up & log in using Email </li>
+  <li>Browse and join available courses</li>
+  <li>Participate in real-time course chats</li>
+  <li>View announcements posted by admins</li>
+  <li>Manage personal profile</li>
+  <li>Receive notifications</li>
+</ul>
 
----
+<h3>🛠️ For Admins</h3>
+<ul>
+  <li>Admin dashboard with overview</li>
+  <li>Create & manage courses</li>
+  <li>Approve or reject join requests</li>
+  <li>Post announcements</li>
+  <li>Manage users inside courses</li>
+</ul>
+
+
 
 🧰 Tech Stack
 
@@ -71,12 +77,14 @@ StudyJamChat/
 
 ---
 
-🚀 Getting Started
+<h2>🚀 Getting Started</h2>
 
-Prerequisites
-	-	Node.js 
-	-	npm 
-	-	Expo CLI.
+<h3>Prerequisites</h3>
+<ul>
+  <li>Node.js</li>
+  <li>npm</li>
+  <li>Expo CLI</li>
+</ul>
 
 ```
 npm install -g expo-cli
@@ -115,12 +123,14 @@ EXPO_PUBLIC_FIREBASE_APP_ID=your_app_id
 npx expo start
 ```
 
-You can then:
-	-	Open on web
-	-	Run on Android/iOS
-	-	Scan with Expo Go
+<p>You can then:</p>
+<ul>
+  <li>Open on web</li>
+  <li>Run on Android/iOS</li>
+  <li>Scan with Expo Go</li>
+</ul>
   
----
+
 
 🔥 Firebase Data Design
 
@@ -146,21 +156,29 @@ npm run build      # Export for web
 ```
 ---
 
-🔐 Security Notes :
-	-	Firebase keys are stored using Expo public env variables
-	-	No admin actions are allowed without role validation
-	-	Firestore rules restrict access based on authentication
+<h2>🔐 Security Notes</h2>
+<ul>
+  <li>Firebase keys are stored using Expo public env variables</li>
+  <li>No admin actions are allowed without role validation</li>
+  <li>Firestore rules restrict access based on authentication</li>
+</ul>
 
----
+<hr />
 
-🤝 Contributing
 
-This project is beginner-friendly.
 
-Steps:
-	-	Fork the repository
-	-   Create a new branch
-	-	Make your changes
-	-	Open a Pull Request
+<h2>🤝 Contributing</h2>
 
----
+<p>This project is beginner-friendly.</p>
+
+<p><strong>Steps:</strong></p>
+<ul>
+  <li>Fork the repository</li>
+  <li>Create a new branch</li>
+  <li>Make your changes</li>
+  <li>Open a Pull Request</li>
+</ul>
+
+<hr />
+
+
